@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Usuarios from "./Usuarios";
+import Facultades from "./Facultades";
+
 
 import {
   Users,
@@ -63,11 +65,16 @@ export default function Dashboard() {
 
           {/* Facultades */}
           <button
-            className="w-full flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-800 transition"
-          >
-            <GraduationCap size={20} />
-            Facultades
-          </button>
+  onClick={() => setModulo("facultades")}
+  className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+    modulo === "facultades"
+      ? "bg-slate-800"
+      : "hover:bg-slate-800"
+  }`}
+>
+  <GraduationCap size={20} />
+  Facultades
+</button>
 
           {/* Carreras */}
           <button
@@ -160,6 +167,7 @@ export default function Dashboard() {
 
         {/* 🔥 SI ESTÁ EN USUARIOS */}
         {modulo === "usuarios" && <Usuarios />}
+        {modulo === "facultades" && <Facultades />}
 
       </main>
     </div>

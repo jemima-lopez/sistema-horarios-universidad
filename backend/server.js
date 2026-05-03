@@ -13,6 +13,9 @@ require("./config/db");
 
 app.use("/api/auth", require("./routes/auth.routes"));
 app.use("/api/usuarios", require("./routes/usuarios.routes"));
+app.use("/api/facultades", require("./routes/facultades.routes"));
+
+
 
 app.listen(process.env.PORT, () => {
   console.log("Servidor corriendo en puerto " + process.env.PORT);

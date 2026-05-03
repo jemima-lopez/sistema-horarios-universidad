@@ -16,6 +16,7 @@ app.use("/api/usuarios", require("./routes/usuarios.routes"));
 app.use("/api/facultades", require("./routes/facultades.routes"));
 app.use("/api/carreras", require("./routes/carreras.routes"));
 app.use("/api/pensums", require("./routes/pensums.routes"));
+app.use("/api/periodos", require("./routes/periodos.routes"));
 
 
 

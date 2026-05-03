@@ -5,6 +5,7 @@ import Usuarios from "./Usuarios";
 import Facultades from "./Facultades";
 import Carreras from "./Carreras";
 import Pensums from "./Pensums";
+import Periodos from "./Periodos";
 
 
 import {
@@ -105,6 +106,19 @@ export default function Dashboard() {
   Pensums
 </button>
 
+          {/* Períodos */}
+          <button
+            onClick={() => setModulo("periodos")}
+            className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+              modulo === "periodos"
+                ? "bg-slate-800"
+                : "hover:bg-slate-800"
+            }`}
+          >
+  <CalendarDays size={20} />
+  Períodos
+</button>
+
 
           {/* Horarios */}
           <button
@@ -192,7 +206,9 @@ export default function Dashboard() {
         {modulo === "facultades" && <Facultades />}
         {modulo === "carreras" && <Carreras />}
         {modulo === "pensums" && <Pensums />}
+        {modulo === "periodos" && <Periodos />}
 
+        
       </main>
     </div>
   );

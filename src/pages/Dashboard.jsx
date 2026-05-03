@@ -7,6 +7,8 @@ import Carreras from "./Carreras";
 import Pensums from "./Pensums";
 import Periodos from "./Periodos";
 import Cursos from "./Cursos";
+import PensumCurso from "./PensumCurso";
+
 
 
 import {
@@ -135,6 +137,19 @@ export default function Dashboard() {
       </button>
 
 
+        <button
+          onClick={() => setModulo("pensumcurso")}
+          className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+            modulo === "pensumcurso"
+              ? "bg-slate-800"
+              : "hover:bg-slate-800"
+          }`}
+        >
+          <ClipboardList size={20} />
+          Pensum Cursos
+</button>
+
+
           {/* Horarios */}
           <button
             className="w-full flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-800 transition"
@@ -143,7 +158,7 @@ export default function Dashboard() {
             Horarios
           </button>
 
-        </nav>
+  </nav>
 
         <button
           onClick={cerrarSesion}
@@ -223,6 +238,7 @@ export default function Dashboard() {
         {modulo === "pensums" && <Pensums />}
         {modulo === "periodos" && <Periodos />}
         {modulo === "cursos" && <Cursos />}
+        {modulo === "pensumcurso" && <PensumCurso />}
 
       </main>
     </div>

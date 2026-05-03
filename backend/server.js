@@ -18,6 +18,8 @@ app.use("/api/carreras", require("./routes/carreras.routes"));
 app.use("/api/pensums", require("./routes/pensums.routes"));
 app.use("/api/periodos", require("./routes/periodos.routes"));
 app.use("/api/cursos", require("./routes/cursos.routes"));
+app.use("/api/pensum-cursos", require("./routes/pensumCurso.routes"));
+app.use("/api/docentes", require("./routes/docentes.routes"));
 
 
 

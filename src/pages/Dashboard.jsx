@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Usuarios from "./Usuarios";
 import Facultades from "./Facultades";
+import Carreras from "./Carreras";
+import Pensums from "./Pensums";
 
 
 import {
@@ -12,6 +14,7 @@ import {
   CalendarDays,
   School,
   LogOut,
+  ClipboardList,
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -78,11 +81,30 @@ export default function Dashboard() {
 
           {/* Carreras */}
           <button
-            className="w-full flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-800 transition"
-          >
-            <BookOpen size={20} />
-            Carreras
-          </button>
+  onClick={() => setModulo("carreras")}
+  className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+    modulo === "carreras"
+      ? "bg-slate-800"
+      : "hover:bg-slate-800"
+  }`}
+>
+  <BookOpen size={20} />
+  Carreras
+</button>
+
+      {/* Pensums */}
+      <button
+  onClick={() => setModulo("pensums")}
+  className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+    modulo === "pensums"
+      ? "bg-slate-800"
+      : "hover:bg-slate-800"
+  }`}
+>
+  <ClipboardList size={20} />
+  Pensums
+</button>
+
 
           {/* Horarios */}
           <button
@@ -168,6 +190,8 @@ export default function Dashboard() {
         {/* 🔥 SI ESTÁ EN USUARIOS */}
         {modulo === "usuarios" && <Usuarios />}
         {modulo === "facultades" && <Facultades />}
+        {modulo === "carreras" && <Carreras />}
+        {modulo === "pensums" && <Pensums />}
 
       </main>
     </div>

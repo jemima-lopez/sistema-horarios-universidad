@@ -21,7 +21,8 @@ app.use("/api/cursos", require("./routes/cursos.routes"));
 app.use("/api/pensum-cursos", require("./routes/pensumCurso.routes"));
 app.use("/api/docentes", require("./routes/docentes.routes"));
 app.use("/api/disponibilidad", require("./routes/disponibilidad.routes"));
-
+app.use("/api/asignaciones", require("./routes/asignacion.routes"));
+app.use("/api/secciones", require("./routes/secciones.routes"));
 
 
 app.listen(process.env.PORT, () => {

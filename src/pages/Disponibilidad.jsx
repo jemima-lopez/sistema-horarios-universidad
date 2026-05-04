@@ -25,7 +25,7 @@ export default function Disponibilidad() {
     const d2 = await r2.json();
     setDocentes(d2);
 
-    const r3 = await fetch("http://localhost:5000/api/bloques");
+    //const r3 = await fetch("http://localhost:5000/api/bloques");
     const d3 = await r3.json();
     setBloques(d3);
   };

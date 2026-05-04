@@ -10,6 +10,7 @@ import Cursos from "./Cursos";
 import PensumCurso from "./PensumCurso";
 import Docentes from "./Docentes";
 import Disponibilidad from "./Disponibilidad";
+import Asignacion from "./Asignacion";
 
 
 
@@ -24,6 +25,7 @@ import {
   ClipboardList,
   CalendarX,
   Trash2,
+  Link2,
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -183,6 +185,20 @@ export default function Dashboard() {
       </button>
 
 
+         {/* Asignaciones */}
+            <button
+        onClick={() => setModulo("asignacion")}
+        className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+          modulo === "asignacion"
+            ? "bg-slate-800"
+            : "hover:bg-slate-800"
+        }`}
+      >
+        <Link2 size={20} />
+        Asignaciones
+</button>
+
+
           {/* Horarios */}
           <button
             className="w-full flex items-center gap-3 p-3 rounded-2xl hover:bg-slate-800 transition"
@@ -274,6 +290,7 @@ export default function Dashboard() {
         {modulo === "pensumcurso" && <PensumCurso />}
         {modulo === "docentes" && <Docentes />}
         {modulo === "disponibilidad" && <Disponibilidad />}
+        {modulo === "asignacion" && <Asignacion />}
 
 
       </main>

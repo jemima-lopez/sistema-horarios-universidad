@@ -8,17 +8,22 @@ import Pensums from "./Pensums";
 import Periodos from "./Periodos";
 import Cursos from "./Cursos";
 import PensumCurso from "./PensumCurso";
+import Docentes from "./Docentes";
+import Disponibilidad from "./Disponibilidad";
 
 
 
 import {
   Users,
+  User,
   GraduationCap,
   BookOpen,
   CalendarDays,
   School,
   LogOut,
   ClipboardList,
+  CalendarX,
+  Trash2,
 } from "lucide-react";
 
 export default function Dashboard() {
@@ -137,6 +142,7 @@ export default function Dashboard() {
       </button>
 
 
+      {/* Pensum Cursos */}      
         <button
           onClick={() => setModulo("pensumcurso")}
           className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
@@ -148,6 +154,33 @@ export default function Dashboard() {
           <ClipboardList size={20} />
           Pensum Cursos
 </button>
+
+            {/* Docentes */}
+            <button
+        onClick={() => setModulo("docentes")}
+        className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+          modulo === "docentes"
+            ? "bg-slate-800"
+            : "hover:bg-slate-800"
+        }`}
+      >
+        <User size={20} />
+        Docentes
+      </button>
+
+
+            {/* Disponibilidad */}
+            <button
+        onClick={() => setModulo("disponibilidad")}
+        className={`w-full flex items-center gap-3 p-3 rounded-2xl transition ${
+          modulo === "disponibilidad"
+            ? "bg-slate-800"
+            : "hover:bg-slate-800"
+        }`}
+      >
+        <CalendarX size={20} />
+        Disponibilidad
+      </button>
 
 
           {/* Horarios */}
@@ -239,6 +272,9 @@ export default function Dashboard() {
         {modulo === "periodos" && <Periodos />}
         {modulo === "cursos" && <Cursos />}
         {modulo === "pensumcurso" && <PensumCurso />}
+        {modulo === "docentes" && <Docentes />}
+        {modulo === "disponibilidad" && <Disponibilidad />}
+
 
       </main>
     </div>

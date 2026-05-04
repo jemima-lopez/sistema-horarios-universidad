@@ -20,6 +20,7 @@ app.use("/api/periodos", require("./routes/periodos.routes"));
 app.use("/api/cursos", require("./routes/cursos.routes"));
 app.use("/api/pensum-cursos", require("./routes/pensumCurso.routes"));
 app.use("/api/docentes", require("./routes/docentes.routes"));
+app.use("/api/disponibilidad", require("./routes/disponibilidad.routes"));
 
 
 
